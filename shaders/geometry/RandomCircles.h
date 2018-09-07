@@ -1,0 +1,23 @@
+#pragma once
+#include "FrameShader.h"
+
+namespace frames
+{
+	typedef shared_ptr<class RandomCircles> RandomCirclesPtr;
+
+	class RandomCircles : public FrameShader
+	{
+	public:
+		RandomCircles(float width, float height);
+		virtual ~RandomCircles();
+
+		virtual void setup() override;
+		virtual void GUISetup() override;
+		virtual void update() override;
+
+	protected:
+		virtual string getFragSrc();
+
+	private:
+	};
+}
